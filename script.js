@@ -23,7 +23,7 @@ function deposit(id, amount){
 }function withdraw(id, amount){
     const account = findAccount(id);
     const FEE_RATE = 0.01;
-    const fee =+(amount + FEE_RATE).toFixed(2);
+    const fee =+(amount * FEE_RATE).toFixed(2);
     if (account.balance >= amount + fee){
         account.balance -= amount + fee;
         console.log(`withdrew #${amount}(+#${fee}). New balance: #${account.balance.toFixed(2)}`);
